@@ -1,0 +1,202 @@
+* {margin: 0; padding: 0; font-size: 10px;}
+@mixin sizeCheck($width,$height) {
+  width: $width;
+  height: $height;
+}
+@mixin borderCheck($size, $color) {
+  border: $size solid $color;
+}
+@font-face {
+  font-family: "Suisse Intl"; 
+  src: url("../../build/css/boldOnlineWebFonts_COM_9fdf41571ed2d7a42325b9210f262843/SuisseIntl-Bold/@font-face/d1a580023d40c546276decde1c711e60.eot"); 
+  src: url("../../build/css/boldOnlineWebFonts_COM_9fdf41571ed2d7a42325b9210f262843/SuisseIntl-Bold/@font-face/d1a580023d40c546276decde1c711e60.eot") format("embedded-opentype"),
+  url("../../build/css/boldOnlineWebFonts_COM_9fdf41571ed2d7a42325b9210f262843/SuisseIntl-Bold/@font-face/d1a580023d40c546276decde1c711e60.woff2") format("woff2"), 
+  url("../../build/css/boldOnlineWebFonts_COM_9fdf41571ed2d7a42325b9210f262843/SuisseIntl-Bold/@font-face/d1a580023d40c546276decde1c711e60.woff") format("woff"), 
+  url("../../build/css/boldOnlineWebFonts_COM_9fdf41571ed2d7a42325b9210f262843/SuisseIntl-Bold/@font-face/d1a580023d40c546276decde1c711e60.ttf") format("truetype"), 
+  url("../../build/css/boldOnlineWebFonts_COM_9fdf41571ed2d7a42325b9210f262843/SuisseIntl-Bold/@font-face/d1a580023d40c546276decde1c711e60.svg") format("svg"); 
+}  
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.total_area {
+  .background_check {
+    @include sizeCheck(100vw, 100vh);
+    background-image: url("../../build/img/sky.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    filter: blur(1px);
+    position: fixed;
+    z-index: -1;
+  }
+  @include sizeCheck(100vw, 100vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .top_area {
+    @include sizeCheck(100vw, 10vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.6);
+    font: {
+      size: 5vw;
+      family: "Suisse Intl", sans-serif;
+    } 
+  }
+  .hanoi_tower {
+    @include sizeCheck(100vw, 60vh);
+    // background-color: rgb(255,255,255,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &>section {
+      @include sizeCheck(25vw, 55vh);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(255,255,255,0.6);
+      // justify-content: center;
+      box-shadow: 0.2vw 0.2vw 0.2vw 0.1vw rgb(254, 254, 254);
+      .stick_bar {
+        @include sizeCheck(0.5vw, 55vh);
+        display: fixed;
+        background-color: rgba(134, 102, 250, 0.6);
+        box-shadow: 0.2vw 0.1vw gray;
+      }
+      .disk_box {
+        // // @include sizeCheck(25vw, 10vh);
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: flex-end;
+      }
+      .contain1{
+        @include sizeCheck(4vw, 7vh);
+        background-color: tomato;
+      }
+      .contain2{
+        @include sizeCheck(8vw, 7vh);
+        background-color: lightcyan;
+      }
+      .contain3{
+        @include sizeCheck(12vw, 7vh);
+        background-color:antiquewhite;
+      }
+      .contain4{
+        @include sizeCheck(16.5vw, 7vh);
+        background-color:rgba(238, 225, 147);
+      }
+      .contain5{
+        @include sizeCheck(20.5vw, 7vh);
+        background-color: aquamarine;
+      }
+      .contain6{
+        @include sizeCheck(25vw, 7vh);
+        background-color:beige;
+      }
+    }
+  }
+  .check_area{
+    @include sizeCheck(100vw, 30vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255,255,255,0.3);
+    .input_area {
+      @include sizeCheck(35vw, 30vh);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      .input_total {
+        @include sizeCheck(20vw, 10vh);
+        display:flex;
+        align-items: center;
+        justify-items: center;
+        .intro_sentence {
+          @include sizeCheck(10vw, 10vh);
+          text-align: center;
+          line-height: 10vh;
+          color: rgba(255,255,255,0.7);
+          font: {
+            size: 2.5vw;
+            family:"Suisse Intl", sans-serif; 
+          }
+        }
+        .input_number {
+          @include sizeCheck(8vw, 10vh);
+          box-shadow: 0.1vw 0.1vw 0.1vw 0.1vw black;
+          text-align: center;
+          border-radius: 1vw;
+          font: {
+            size: 3vw;
+            family:"Suisse Intl", sans-serif;  
+          }
+        }
+      }
+      .button_area {
+        @include sizeCheck(8vw, 30vh);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .confirm_button{
+          @include sizeCheck(7vw, 8vh);
+          background-color: rgba(238, 225, 147,0.7);
+          box-shadow: 0.1vw 0.1vw 0.1vw 0.1vw black;
+          text-align: center;
+          line-height: 8vh;
+          border-radius: 1vw;
+          margin-bottom: 1vw;
+          font: {
+            size: 2vw;
+            weight: bold;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .reset_button {
+          @include sizeCheck(7vw, 8vh);
+          background-color: rgba(238, 225, 147,0.7);
+          box-shadow: 0.1vw 0.1vw 0.1vw 0.1vw black;
+          text-align: center;
+          line-height: 8vh;
+          border-radius: 1vw;
+          font: {
+            size: 2vw;
+            weight: bold;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }  
+    }
+    .check_numbering {
+      @include sizeCheck(65vw, 30vh);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .inner_box {
+        @include sizeCheck(50vw,25vh);
+        box-shadow: 0.2vw 0.2vw 0.2vw 0.2vw rgb(41, 39, 39);
+        background-color: rgba(255,255,255,0.7);
+        overflow-x: hidden;
+        overflow-y: scroll;
+        &>p {
+          @include sizeCheck(50vw, 5vh);
+          text-align: center;
+          align-items: 5vh;
+          font: {
+            size: 2vw;
+          }
+        }
+      }
+    }
+  }
+}
