@@ -1,0 +1,762 @@
+* {margin: 0; padding: 0; font-size: 10px;}
+@mixin sizeCheck($width,$height) {
+  width: $width;
+  height: $height;
+}
+@mixin borderCheck($size, $color) {
+  border: $size solid $color;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+//배경화면
+/*html{
+background: linear-gradient(#636fa4, #e8cbc0);
+}*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.wraptotalBox{
+  width: 100%;
+  height: 200%;
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  z-index: 0;
+}
+.alertBox{
+  @include sizeCheck(50rem, 25rem);
+  @include borderCheck(0.2rem, red);
+  background-color: rgb(240, 193, 193);
+  font:{
+    family: 'Jua', sans-serif;
+    size: 4rem;
+  }
+  opacity: 70%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 12rem;
+  position: absolute;
+  z-index: 200;
+  top: -100vh;
+  left: 50%;
+  transition: all 0.5s linear;
+}
+.totalBox{
+  @include sizeCheck(120rem, 100vh);    //129
+  @include borderCheck(0.0rem, black);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+ // background: linear-gradient(#636fa400rgba(232, 203, 192, 0)c0);
+  color: rgb(242, 167, 167);
+/*  .makeBack{        //배경 화면 그림
+    position: absolute;
+    @include sizeCheck(10rem, 5vh);   // 포지션 위치를 통해서 이동하므로 공간 튀어나가지 않도록 하기위함
+    margin:0 auto;
+    color: rgb(202, 186, 186);
+    transition: all linear 0.5s;
+    opacity: 0.5;
+    z-index: 10;
+  }*/
+
+  .upperArea {
+    @include sizeCheck(120rem, 11vh);  //128
+    @include borderCheck(0.0rem, red);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    line-height: 19vh;
+    z-index: 10;
+    .matrixTitle{
+      @include sizeCheck(70rem,11vh);
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      line-height: 14vh;
+      @include borderCheck(0.0rem, blue);
+      border-bottom: 0rem solid rgb(197, 186, 186);
+      font: {
+        size: 7rem;
+        family: 'Jua', sans-serif;
+      }
+    }
+  }
+
+
+  //첫 번째 부분
+  .firstArea{
+    @include sizeCheck(55rem, 85vh);  // 37
+    @include borderCheck(0.0rem, white);
+    border-right: 0.2rem;
+    display: inline-block;
+    float: left;
+    z-index: 100;
+    .firstUpperArea{
+      @include sizeCheck(55rem, 13vh );  //37
+      border-bottom: 0.0rem solid white;
+      display: inline-flex;
+      //background-color: red;
+      .matrixATitle{
+        @include sizeCheck(35rem, 13vh);
+        @include borderCheck(0.0rem, black);
+        display: inline-block;
+        margin: 0 auto;
+        //margin-top: 1.5vh;
+        //matrixB 글자 부분
+        .matrixA_inner_title{
+          @include sizeCheck(35rem,5vh); 
+          @include borderCheck(0.0rem, blue);
+          float: left;
+          font: {
+            size: 3rem;
+            family: 'Jua', sans-serif; 
+          }
+          text-align: center;
+          line-height: 4vh;
+        }
+        //아래쪽 행,열 입력 란
+        .matrixAInnerDown{
+          @include sizeCheck(35rem, 7vh);
+          @include borderCheck(0.0rem, green);
+          display: inline-flex;
+          justify-content: center;
+          //line-height: 1vh;
+          float: left;
+          margin-left: 0.5rem;
+          z-index: 100;
+          .matrixA_colume, .matrix_font, .multify, .matrixA_row {
+            @include sizeCheck(6rem, 6vh);
+            @include borderCheck(0.0rem, yellow);
+            display: inline-flex;
+            float: left;
+            //line-height: 1vh;
+            justify-content: center;
+
+          }
+          .matrixA_colume, .matrixA_row {
+            width: 5.5rem;
+            @include borderCheck(0.2rem, white);
+            background-color: rgba(250,250,250,0%);
+            box-shadow: 0.0rem 0.0rem 0.8rem 0.0rem lightgray;
+            font-size: 3rem;
+            text-align: center;
+            z-index: 100;
+            border-radius: 20%;
+            margin-top: 0vh;
+          }
+          .numbering_button{
+            @include sizeCheck(2rem, 5vh);
+            display: flex;
+            flex-direction: column;
+            margin-left:0.5rem;
+            margin-top: 0.5rem;     
+            z-index: 100;       
+            .upperNum_button{
+              height: 2.5vh;
+              font-size: 1.7rem;
+              font-weight: bold;
+              box-shadow: 0.0rem 0.0rem 0.8rem 0.0rem lightgray;
+              text-align: center;
+              //line-height: 3.5vh;
+              border-radius: 20%;
+              margin-top: 0.2rem;
+              }
+            .lowerNum_button{
+              height: 2.7vh;
+              font-size: 1.7rem;
+              font-weight: bold;
+              box-shadow: 0.0rem 0.0rem 0.8rem 0.0rem lightgray;
+              text-align: center;
+              //line-height: 3.7vh;
+              border-radius: 20%;
+              margin-top: 0.5rem;
+            }
+          }
+          .matrix_font {
+            text-align: center;
+            line-height: 8vh;
+            width: 5rem;
+            font: {
+              size: 3rem;
+              family:'Jua', sans-serif;  
+            }
+          }
+          .multify {
+            text-align: center;
+            margin-top: 0vh;
+            margin-left: -0.5rem;
+            //line-height:8vh;
+            width: 5rem;
+            font: {
+              size: 4rem;
+              family:'Jua', sans-serif;  
+            }
+          }
+        }
+      }
+    }
+    // 아래부분 박스
+    .firstLowerArea{
+      @include sizeCheck(55rem, 72vh);   //37
+      @include borderCheck(0.0rem, yellow);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .button_area{
+        @include sizeCheck(34rem, 6vh);  //33
+        @include borderCheck(0.0rem, blue);
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 0 auto;
+        margin-top: 0rem;
+        margin-bottom: 1rem;
+        z-index: 100;
+        .matrixA_outputButton{
+          @include sizeCheck(8rem, 6vh);
+          @include borderCheck(0.2rem, white);
+          color: #333;
+          background-color: rgba(255,255,255,0%);
+          display: inline-flex;
+          justify-content: center;
+          line-height: 6vh;
+          z-index: 100;
+          border-radius: 10%;
+          box-shadow: 0.0rem 0.0rem 0.8rem 0.0rem lightgray;
+          font: {
+            size: 2rem;
+            family: 'Jua', sans-serif;
+          }
+          &:hover {
+            background-color: rgb(177, 159, 241);
+            @include borderCheck(0.0rem, rgb(90, 51, 230));
+            cursor: pointer;
+          }
+        }
+        .matrixA_random {
+          @include sizeCheck(8rem, 6vh);
+          @include borderCheck(0.2rem, white);
+          color: #333;
+          background-color: rgba(255,255,255,0%);
+          display: inline-flex;
+          justify-content: center;
+          line-height: 6vh;
+          z-index: 100;
+          border-radius: 10%;
+          box-shadow: 0.0rem 0.0rem 0.8rem 0.0rem lightgray;
+          font: {
+            size: 2rem;
+            family: 'Jua', sans-serif;
+          }
+          &:hover {
+            background-color: rgb(177, 159, 241);
+            @include borderCheck(0.0rem, rgb(90, 51, 230));
+            cursor: pointer;
+          }
+        }
+        .matrixA_reset {
+          @include sizeCheck(8rem, 6vh);
+          @include borderCheck(0.2rem, white);
+          color: #333;
+          background-color: rgba(255,255,255,0%);
+          display: inline-flex;
+          justify-content: center;
+          line-height: 6vh;
+          z-index: 100;
+          border-radius: 10%;
+          box-shadow: 0.0rem 0.0rem 0.8rem 0.0rem lightgray;
+          font: {
+            size: 2rem;
+            family: 'Jua', sans-serif;
+          }
+          &:hover {
+            background-color: rgb(177, 159, 241);
+            @include borderCheck(0.0rem, rgb(90, 51, 230));
+            cursor: pointer;
+          }
+        }
+      }      
+      .matrixA_output{
+        @include sizeCheck(54rem, 64vh); // 33
+        @include borderCheck(0.0rem, white);
+        border-right: 0.2rem dotted white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: nowrap;
+        margin: 0 auto;
+        margin-top: 0vh;
+        margin-left: 0.2rem;  //border 값이 있으니까.
+        z-index: 100;
+        #innerBox_aRow{
+          @include borderCheck(0.0rem, blue); 
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          align-content: center;
+          justify-content: space-around;
+          #innerBox_aColume {
+            @include borderCheck(0.0rem, rgb(86, 58, 187));
+            box-shadow: 0 0 0.8rem 0 lightgray;
+            width: 4.5rem;
+            height: 5rem;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            z-index: 100;
+            text-align: center;
+            border-radius: 20%;
+            background-color: rgba(230, 219, 219, 0%);
+            color: #303a68;
+            font: {
+              size: 1.8rem;
+              weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+// 계산연산자 부분
+  .calculateArea{
+    @include sizeCheck(8rem, 85vh);
+    @include borderCheck(0.0rem, white);
+    display: inline-flex;
+    float: left;
+    z-index: 100;
+    .calArea {
+      @include sizeCheck(6rem, 40vh);
+      @include borderCheck(0.0rem, black );
+      margin: 0 auto;
+      margin-top: 27vh;
+      margin-left: -0.0rem;
+      display: inline-flex;
+      flex-direction: column;
+      .plusButton, .minusButton, .multiButton {
+        @include sizeCheck(6rem,6vh);
+        @include borderCheck(0.2rem, white);
+        color:rgb(242, 167, 167);
+        margin-bottom: 1rem;
+        border-radius: 20%;
+        background-color: rgba(255,255,255,0%);
+        box-shadow: 0.0rem 0.0rem 0.8rem 0.0rem lightgray;
+        z-index: 100;
+        text-align: center;
+        line-height: 6vh;
+        font: {
+          size: 4rem;
+          weight: bold;
+        }
+        &:hover {
+          background-color: rgb(177, 159, 241);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+
+
+
+  //두번째 부분
+  .secondArea{
+    @include sizeCheck(55rem, 85vh);  // 37
+    @include borderCheck(0.0rem, white);
+    border-right: 0.2rem;
+    display: inline-block;
+    float: left;
+    z-index: 100;
+    .secondUpperArea{
+      @include sizeCheck(55rem, 13vh );  //37
+      border-bottom: 0.0rem solid white;
+      display: inline-flex;
+      //background-color: red;
+      .matrixBTitle{
+        @include sizeCheck(35rem, 13vh);
+        @include borderCheck(0.0rem, black);
+        display: inline-block;
+        margin: 0 auto;
+        //margin-top: 1.5vh;
+        //matrixB 글자 부분
+        .matrixB_inner_title{
+          @include sizeCheck(35rem,5vh); 
+          @include borderCheck(0.0rem, blue);
+          float: left;
+          font: {
+            size: 3rem;
+            family: 'Jua', sans-serif; 
+          }
+          text-align: center;
+          line-height: 4vh;
+        }
+        //아래쪽 행,열 입력 란
+        .matrixBInnerDown{
+          @include sizeCheck(35rem, 7vh);
+          @include borderCheck(0.0rem, green);
+          display: inline-flex;
+          justify-content: center;
+          //line-height: 1vh;
+          float: left;
+          margin-left: 0.5rem;
+          z-index: 100;
+          .matrixB_colume, .matrix_font, .multify, .matrixB_row {
+            @include sizeCheck(6rem, 6vh);
+            @include borderCheck(0.0rem, yellow);
+            display: inline-flex;
+            float: left;
+            //line-height: 1vh;
+            justify-content: center;
+
+          }
+          .matrixB_colume, .matrixB_row {
+            width: 5.5rem;
+            @include borderCheck(0.2rem, white);
+            background-color: rgba(250,250,250,0%);
+            box-shadow: 0.0rem 0.0rem 0.8rem 0.0rem lightgray;
+            font-size: 3rem;
+            text-align: center;
+            z-index: 100;
+            border-radius: 20%;
+            margin-top: 0vh;
+          }
+          .numbering_button{
+            @include sizeCheck(2rem, 5vh);
+            display: flex;
+            flex-direction: column;
+            margin-left:0.5rem;
+            margin-top: 0.5rem;     
+            z-index: 100;       
+            .upperNum_button{
+              height: 2.5vh;
+              font-size: 1.7rem;
+              font-weight: bold;
+              box-shadow: 0.0rem 0.0rem 0.8rem 0.0rem lightgray;
+              text-align: center;
+              //line-height: 3.5vh;
+              border-radius: 20%;
+              margin-top: 0.2rem;
+              }
+            .lowerNum_button{
+              height: 2.7vh;
+              font-size: 1.7rem;
+              font-weight: bold;
+              box-shadow: 0.0rem 0.0rem 0.8rem 0.0rem lightgray;
+              text-align: center;
+              //line-height: 3.7vh;
+              border-radius: 20%;
+              margin-top: 0.5rem;
+            }
+          }
+          .matrix_font {
+            text-align: center;
+            line-height: 8vh;
+            width: 5rem;
+            font: {
+              size: 3rem;
+              family:'Jua', sans-serif;  
+            }
+          }
+          .multify {
+            text-align: center;
+            margin-top: 0vh;
+            margin-left: -0.5rem;
+            //line-height:8vh;
+            width: 5rem;
+            font: {
+              size: 4rem;
+              family:'Jua', sans-serif;  
+            }
+          }
+        }
+      }
+    }
+    // 아래부분 박스
+    .secondLowerArea{
+      @include sizeCheck(55rem, 72vh);   //37
+      @include borderCheck(0.0rem, yellow);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .button_area{
+        @include sizeCheck(34rem, 6vh);  //33
+        @include borderCheck(0.0rem, blue);
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 0 auto;
+        margin-top: 0rem;
+        margin-bottom: 1rem;
+        z-index: 100;
+        .matrixB_outputButton{
+          @include sizeCheck(8rem, 6vh);
+          @include borderCheck(0.2rem, white);
+          color: #333;
+          background-color: rgba(255,255,255,0%);
+          display: inline-flex;
+          justify-content: center;
+          line-height: 6vh;
+          z-index: 100;
+          border-radius: 10%;
+          box-shadow: 0.0rem 0.0rem 0.8rem 0.0rem lightgray;
+          font: {
+            size: 2rem;
+            family: 'Jua', sans-serif;
+          }
+          &:hover {
+            background-color: rgb(177, 159, 241);
+            @include borderCheck(0.0rem, rgb(90, 51, 230));
+            cursor: pointer;
+          }
+        }
+        .matrixB_random {
+          @include sizeCheck(8rem, 6vh);
+          @include borderCheck(0.2rem, white);
+          color: #333;
+          background-color: rgba(255,255,255,0%);
+          display: inline-flex;
+          justify-content: center;
+          line-height: 6vh;
+          z-index: 100;
+          border-radius: 10%;
+          box-shadow: 0.0rem 0.0rem 0.8rem 0.0rem lightgray;
+          font: {
+            size: 2rem;
+            family: 'Jua', sans-serif;
+          }
+          &:hover {
+            background-color: rgb(177, 159, 241);
+            @include borderCheck(0.0rem, rgb(90, 51, 230));
+            cursor: pointer;
+          }
+        }
+        .matrixB_reset {
+          @include sizeCheck(8rem, 6vh);
+          @include borderCheck(0.2rem, white);
+          color: #333;
+          background-color: rgba(255,255,255,0%);
+          display: inline-flex;
+          justify-content: center;
+          line-height: 6vh;
+          z-index: 100;
+          border-radius: 10%;
+          box-shadow: 0.0rem 0.0rem 0.8rem 0.0rem lightgray;
+          font: {
+            size: 2rem;
+            family: 'Jua', sans-serif;
+          }
+          &:hover {
+            background-color: rgb(177, 159, 241);
+            @include borderCheck(0.0rem, rgb(90, 51, 230));
+            cursor: pointer;
+          }
+        }
+      }      
+      .matrixB_output{
+        @include sizeCheck(54rem, 64vh); // 33
+        @include borderCheck(0.0rem, white);
+        border-right: 0.2rem dotted white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: nowrap;
+        margin: 0 auto;
+        margin-top: 0vh;
+        margin-left: 0.2rem;  //border 값이 있으니까.
+        z-index: 100;
+        #innerBox_bRow{
+          @include borderCheck(0.0rem, blue); 
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          align-content: center;
+          justify-content: space-around;
+          #innerBox_bColume {
+            @include borderCheck(0.0rem, rgb(86, 58, 187));
+            box-shadow: 0 0 0.8rem 0 lightgray;
+            width: 4.5rem;
+            height: 5rem;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            z-index: 100;
+            text-align: center;
+            border-radius: 20%;
+            background-color: rgba(230, 219, 219, 0%);
+            color: #303a68;
+            font: {
+              size: 1.8rem;
+              weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 네번째 부분
+.fourthArea{
+  @include sizeCheck(120rem, 100vh);    //129
+  @include borderCheck(0.0rem, black);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  color: rgb(242, 167, 167);
+  z-index: 200;
+  .fourthUpperArea{
+    @include sizeCheck(120rem, 20vh );
+    border-bottom: 0.0rem solid white;
+    display: flex;
+    /* background-color: 0; */
+    .matrixRTitle{
+      @include sizeCheck(120rem, 20vh);
+      @include borderCheck(0.0rem, black);
+      display: flex;
+      margin: 0 auto;
+      margin-top: 0vh;
+      justify-content: center;
+      z-index: 100;
+      //matrixr 글자 부분
+      .matrixR_inner_DownAll{
+        @include sizeCheck(35rem,8vh); 
+        @include borderCheck(0.0rem, blue);
+        float: left;
+        margin-top: 2rem;
+        z-index:100;
+        font: {
+          size: 5rem;
+          family: 'Jua', sans-serif; 
+        }
+        text-align: center;
+        line-height: 7vh;
+      }
+      //아래쪽 행,열 입력 란
+        .matrixRInnerDown{
+          @include sizeCheck(35rem, 7vh);
+          @include borderCheck(0.0rem, green);
+          display: flex;
+          justify-content: center;
+          line-height: 7vh;
+          float: left;
+          z-index: 100;
+          .matrixR_colume, .matrix_font, .multify, .matrixR_row {
+            @include sizeCheck(6rem, 7vh);
+            @include borderCheck(0.0rem, yellow);
+            display: inline-flex;
+            float: left;
+            line-height: 7vh;
+            justify-content: center;
+            z-index: 100;
+          }
+          .matrixR_colume, .matrixR_row {
+            @include borderCheck(0.2rem, white);
+            background-color: rgba(250,250,250,0%);
+            box-shadow: 0.0rem 0.0rem 0.8rem 0.0rem lightgray;
+            font-size: 4rem;
+            text-align: center;
+            z-index: 100;
+            border-radius: 20%;
+          }
+          .matrix_font {
+            text-align: center;
+            line-height:10vh;
+            width: 5rem;
+            font: {
+              size: 4rem;
+              family:'Jua', sans-serif;  
+            }
+          }
+          .multify {
+            text-align: center;
+            line-height:8vh;
+            width: 5rem;
+            font: {
+              size: 6rem;
+              family:'Jua', sans-serif;  
+            }
+          }
+        }
+    }
+  }
+      // 아래부분 박스
+  .fourthLowerArea{
+    @include sizeCheck(120rem, 80vh);   //37
+    @include borderCheck(0.0rem, yellow);
+    display: flex;
+    float: left;
+    z-index: 100;
+    .matrixR_output{
+      @include sizeCheck(104rem, 77vh); // 33
+      @include borderCheck(0.0rem, white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: nowrap;
+      z-index: 100;
+      margin-left: 8rem;
+      #innerBox_rRow{
+        @include borderCheck(0.0rem, red); 
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: space-around;
+        #innerBox_rColume {
+          @include borderCheck(0.0rem, rgb(86, 58, 187));
+          box-shadow: 0 0 0.8rem 0 lightgray;
+          width: 10rem;
+          height: 6rem;
+          display: flex;
+          justify-content: center;
+          align-self: center;
+          z-index: 100;
+          text-align: center;
+          border-radius: 20%;
+          background-color: rgba(230, 219, 219, 0%);
+          color: #333;
+          font: {
+            size: 2rem;
+            weight: bold;
+          }
+          /*&:hover {
+            width: 7rem;
+            height: 7rem;
+            cursor: zoom-in;
+            font: {
+              size: 1.5rem;
+              weight: bold;
+            }
+          }*/
+        }
+      }
+    }
+    .back_button{
+      @include sizeCheck(8rem, 8rem);
+      color: rgb(242, 167, 167);
+      border-radius: 50%;
+      margin-top: 67vh;
+      background-color: white;
+      box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+      border: 2px solid white;
+      text-align: center;
+      line-height: 9vh;
+      z-index:100;
+      font: {
+        size: 5rem;
+        weight: bold;
+      }
+      &:hover{
+        border: 0px solid rgb(90, 51, 230);
+        background-color: rgb(177, 159, 241);
+        cursor: pointer;
+      }
+    }        
+  }
+}

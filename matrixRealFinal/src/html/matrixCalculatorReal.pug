@@ -1,0 +1,92 @@
+doctype html
+html(lang="ko") 
+  head
+    meta(charset="utf-8")
+    link(rel="icon" href="./img/matrixFavicon.png")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    link(rel = "stylesheet" href = "../css/matrixCSS.css")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Jua&family=Stylish&display=swap" rel="stylesheet")
+    script(src="three.r119.min.js")
+    script(src="vanta.birds.min.js")
+    title matrixCalculator
+  body
+    div(class="alertBox" id="alertBox") 매트릭스의 행과 열을 <br>확인하세요!!
+    section(class="wraptotalBox")
+    section(class="totalBox" id="totalBox")
+      section(class="upperArea")
+        articl(class="matrixTitle") Matrix Calculator
+
+      main(class="firstArea")
+        section(class="firstUpperArea") 
+          article(class="matrixATitle") 
+            div(class="matrixA_inner_title") MatrixA 
+            div(class="matrixAInnerDown")
+              input(type="number" value="1" min="1" max="9" class="matrixA_row" id="matrixA_row" oninput="handle_input(this, 1)" )
+              div(class="numbering_button")
+                i(class="xi-caret-up" class="upperNum_button" id="upperNum_Abutton")
+                i(class="xi-caret-down" class="lowerNum_button" id="lowerNum_Abutton")
+              div(class="matrix_font") 행
+              div(class="multify") X
+              input(type="number" value="1" min="1" max="9" oninput="handle_input(this, 1)" class="matrixA_colume" id="matrixA_colume")
+              div(class="numbering_button")
+                i(class="xi-caret-up" class="upperNum_button" id="upperNum_Abutton_colume")
+                i(class="xi-caret-down" class="lowerNum_button" id="lowerNum_Abutton_colume")
+              div(class="matrix_font") 열
+        section(class="firstLowerArea") 
+          article(class="button_area")
+            button(class="matrixA_outputButton" id="matrixA_outputButton") output
+            button(class="matrixA_random" id="matrixA_random") random
+            button(class="matrixA_reset" id="matrixA_reset") reset       
+          article(class="matrixA_output" id="matrixA_output")
+
+      main(class="calculateArea")
+        section(class="calArea")
+          //a(href="#matrixRTitle" class="moveToResult" id="moveToResult")
+          i(class="xi-plus" class="plusButton" id="plusButton") 
+          i(class="xi-minus" class="minusButton" id="minusButton")
+          i(class="xi-close" class="multiButton" id="multiButton")
+
+      main(class="secondArea")
+        section(class="secondUpperArea") 
+          article(class="matrixBTitle") 
+            div(class="matrixB_inner_title") MatrixB 
+            div(class="matrixBInnerDown")
+              input(type="number" value="1" min="1" max="9" oninput="handle_input(this, 1)" class="matrixB_row" id="matrixB_row")
+              div(class="numbering_button")
+                i(class="xi-caret-up" class="upperNum_button" id="upperNum_Bbutton" )
+                i(class="xi-caret-down" class="lowerNum_button" id="lowerNum_Bbutton")
+              div(class="matrix_font") 행
+              div(class="multify") X
+              input(type="number" value="1" min="1" max="9" oninput="handle_input(this, 1)" class="matrixB_colume" id="matrixB_colume")
+              div(class="numbering_button")
+                i(class="xi-caret-up" class="upperNum_button" id="upperNum_Bbutton_colume")
+                i(class="xi-caret-down" class="lowerNum_button" id="lowerNum_Bbutton_colume")
+              div(class="matrix_font") 열
+        section(class="secondLowerArea") 
+          article(class="button_area")
+            button(class="matrixB_outputButton" id="matrixB_outputButton") output
+            button(class="matrixB_random" id="matrixB_random") random
+            button(class="matrixB_reset" id="matrixB_reset") reset        
+          article(class="matrixB_output" id="matrixB_output")
+
+    main(class="fourthArea")
+      section(class="fourthUpperArea") 
+        article(class="matrixRTitle" id="matrixRTitle") 
+          div(class="matrixR_inner_DownAll") RESULT
+            div(class="matrixRInnerDown")
+              input(type="number" min="1" max="9" oninput="handle_input(this, 1)" class="matrixR_row" id="matrixR_row" readonly)
+              div(class="matrix_font") 행
+              div(class="multify") X
+              input(type="number" min="1" max="9" oninput="handle_input(this, 1)" class="matrixR_colume" id="matrixR_colume" readonly)
+              div(class="matrix_font") 열
+      section(class="fourthLowerArea") 
+        article(class="matrixR_output" id="matrixR_output")
+        a(href="#totalBox")
+          i(class="xi-arrow-up" class="back_button")
+
+
+
+    script(src="./main.js")
