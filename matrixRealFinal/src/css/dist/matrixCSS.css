@@ -1,0 +1,722 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+/*html{
+background: linear-gradient(#636fa4, #e8cbc0);
+}*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.wraptotalBox {
+  width: 100%;
+  height: 200%;
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  z-index: 0;
+}
+
+.alertBox {
+  width: 50rem;
+  height: 25rem;
+  border: 0.2rem solid red;
+  background-color: #f0c1c1;
+  font-family: "Jua", sans-serif;
+  font-size: 4rem;
+  opacity: 70%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 12rem;
+  position: absolute;
+  z-index: 200;
+  top: -100vh;
+  left: 50%;
+  transition: all 0.5s linear;
+}
+
+.totalBox {
+  width: 120rem;
+  height: 100vh;
+  border: 0rem solid black;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  color: #f2a7a7;
+  /*  .makeBack{        //배경 화면 그림
+      position: absolute;
+      @include sizeCheck(10rem, 5vh);   // 포지션 위치를 통해서 이동하므로 공간 튀어나가지 않도록 하기위함
+      margin:0 auto;
+      color: rgb(202, 186, 186);
+      transition: all linear 0.5s;
+      opacity: 0.5;
+      z-index: 10;
+    }*/
+}
+.totalBox .upperArea {
+  width: 120rem;
+  height: 11vh;
+  border: 0rem solid red;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  line-height: 19vh;
+  z-index: 10;
+}
+.totalBox .upperArea .matrixTitle {
+  width: 70rem;
+  height: 11vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  line-height: 14vh;
+  border: 0rem solid blue;
+  border-bottom: 0rem solid #c5baba;
+  font-size: 7rem;
+  font-family: "Jua", sans-serif;
+}
+.totalBox .firstArea {
+  width: 55rem;
+  height: 85vh;
+  border: 0rem solid white;
+  border-right: 0.2rem;
+  display: inline-block;
+  float: left;
+  z-index: 100;
+}
+.totalBox .firstArea .firstUpperArea {
+  width: 55rem;
+  height: 13vh;
+  border-bottom: 0rem solid white;
+  display: inline-flex;
+}
+.totalBox .firstArea .firstUpperArea .matrixATitle {
+  width: 35rem;
+  height: 13vh;
+  border: 0rem solid black;
+  display: inline-block;
+  margin: 0 auto;
+}
+.totalBox .firstArea .firstUpperArea .matrixATitle .matrixA_inner_title {
+  width: 35rem;
+  height: 5vh;
+  border: 0rem solid blue;
+  float: left;
+  font-size: 3rem;
+  font-family: "Jua", sans-serif;
+  text-align: center;
+  line-height: 4vh;
+}
+.totalBox .firstArea .firstUpperArea .matrixATitle .matrixAInnerDown {
+  width: 35rem;
+  height: 7vh;
+  border: 0rem solid green;
+  display: inline-flex;
+  justify-content: center;
+  float: left;
+  margin-left: 0.5rem;
+  z-index: 100;
+}
+.totalBox .firstArea .firstUpperArea .matrixATitle .matrixAInnerDown .matrixA_colume, .totalBox .firstArea .firstUpperArea .matrixATitle .matrixAInnerDown .matrix_font, .totalBox .firstArea .firstUpperArea .matrixATitle .matrixAInnerDown .multify, .totalBox .firstArea .firstUpperArea .matrixATitle .matrixAInnerDown .matrixA_row {
+  width: 6rem;
+  height: 6vh;
+  border: 0rem solid yellow;
+  display: inline-flex;
+  float: left;
+  justify-content: center;
+}
+.totalBox .firstArea .firstUpperArea .matrixATitle .matrixAInnerDown .matrixA_colume, .totalBox .firstArea .firstUpperArea .matrixATitle .matrixAInnerDown .matrixA_row {
+  width: 5.5rem;
+  border: 0.2rem solid white;
+  background-color: rgba(250, 250, 250, 0);
+  box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+  font-size: 3rem;
+  text-align: center;
+  z-index: 100;
+  border-radius: 20%;
+  margin-top: 0vh;
+}
+.totalBox .firstArea .firstUpperArea .matrixATitle .matrixAInnerDown .numbering_button {
+  width: 2rem;
+  height: 5vh;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  z-index: 100;
+}
+.totalBox .firstArea .firstUpperArea .matrixATitle .matrixAInnerDown .numbering_button .upperNum_button {
+  height: 2.5vh;
+  font-size: 1.7rem;
+  font-weight: bold;
+  box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+  text-align: center;
+  border-radius: 20%;
+  margin-top: 0.2rem;
+}
+.totalBox .firstArea .firstUpperArea .matrixATitle .matrixAInnerDown .numbering_button .lowerNum_button {
+  height: 2.7vh;
+  font-size: 1.7rem;
+  font-weight: bold;
+  box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+  text-align: center;
+  border-radius: 20%;
+  margin-top: 0.5rem;
+}
+.totalBox .firstArea .firstUpperArea .matrixATitle .matrixAInnerDown .matrix_font {
+  text-align: center;
+  line-height: 8vh;
+  width: 5rem;
+  font-size: 3rem;
+  font-family: "Jua", sans-serif;
+}
+.totalBox .firstArea .firstUpperArea .matrixATitle .matrixAInnerDown .multify {
+  text-align: center;
+  margin-top: 0vh;
+  margin-left: -0.5rem;
+  width: 5rem;
+  font-size: 4rem;
+  font-family: "Jua", sans-serif;
+}
+.totalBox .firstArea .firstLowerArea {
+  width: 55rem;
+  height: 72vh;
+  border: 0rem solid yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.totalBox .firstArea .firstLowerArea .button_area {
+  width: 34rem;
+  height: 6vh;
+  border: 0rem solid blue;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  z-index: 100;
+}
+.totalBox .firstArea .firstLowerArea .button_area .matrixA_outputButton {
+  width: 8rem;
+  height: 6vh;
+  border: 0.2rem solid white;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0);
+  display: inline-flex;
+  justify-content: center;
+  line-height: 6vh;
+  z-index: 100;
+  border-radius: 10%;
+  box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+  font-size: 2rem;
+  font-family: "Jua", sans-serif;
+}
+.totalBox .firstArea .firstLowerArea .button_area .matrixA_outputButton:hover {
+  background-color: #b19ff1;
+  border: 0rem solid #5a33e6;
+  cursor: pointer;
+}
+.totalBox .firstArea .firstLowerArea .button_area .matrixA_random {
+  width: 8rem;
+  height: 6vh;
+  border: 0.2rem solid white;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0);
+  display: inline-flex;
+  justify-content: center;
+  line-height: 6vh;
+  z-index: 100;
+  border-radius: 10%;
+  box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+  font-size: 2rem;
+  font-family: "Jua", sans-serif;
+}
+.totalBox .firstArea .firstLowerArea .button_area .matrixA_random:hover {
+  background-color: #b19ff1;
+  border: 0rem solid #5a33e6;
+  cursor: pointer;
+}
+.totalBox .firstArea .firstLowerArea .button_area .matrixA_reset {
+  width: 8rem;
+  height: 6vh;
+  border: 0.2rem solid white;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0);
+  display: inline-flex;
+  justify-content: center;
+  line-height: 6vh;
+  z-index: 100;
+  border-radius: 10%;
+  box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+  font-size: 2rem;
+  font-family: "Jua", sans-serif;
+}
+.totalBox .firstArea .firstLowerArea .button_area .matrixA_reset:hover {
+  background-color: #b19ff1;
+  border: 0rem solid #5a33e6;
+  cursor: pointer;
+}
+.totalBox .firstArea .firstLowerArea .matrixA_output {
+  width: 54rem;
+  height: 64vh;
+  border: 0rem solid white;
+  border-right: 0.2rem dotted white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  margin-top: 0vh;
+  margin-left: 0.2rem;
+  z-index: 100;
+}
+.totalBox .firstArea .firstLowerArea .matrixA_output #innerBox_aRow {
+  border: 0rem solid blue;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+}
+.totalBox .firstArea .firstLowerArea .matrixA_output #innerBox_aRow #innerBox_aColume {
+  border: 0rem solid #563abb;
+  box-shadow: 0 0 0.8rem 0 lightgray;
+  width: 4.5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  z-index: 100;
+  text-align: center;
+  border-radius: 20%;
+  background-color: rgba(230, 219, 219, 0);
+  color: #303a68;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.totalBox .calculateArea {
+  width: 8rem;
+  height: 85vh;
+  border: 0rem solid white;
+  display: inline-flex;
+  float: left;
+  z-index: 100;
+}
+.totalBox .calculateArea .calArea {
+  width: 6rem;
+  height: 40vh;
+  border: 0rem solid black;
+  margin: 0 auto;
+  margin-top: 27vh;
+  margin-left: 0rem;
+  display: inline-flex;
+  flex-direction: column;
+}
+.totalBox .calculateArea .calArea .plusButton, .totalBox .calculateArea .calArea .minusButton, .totalBox .calculateArea .calArea .multiButton {
+  width: 6rem;
+  height: 6vh;
+  border: 0.2rem solid white;
+  color: #f2a7a7;
+  margin-bottom: 1rem;
+  border-radius: 20%;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+  z-index: 100;
+  text-align: center;
+  line-height: 6vh;
+  font-size: 4rem;
+  font-weight: bold;
+}
+.totalBox .calculateArea .calArea .plusButton:hover, .totalBox .calculateArea .calArea .minusButton:hover, .totalBox .calculateArea .calArea .multiButton:hover {
+  background-color: #b19ff1;
+  cursor: pointer;
+}
+.totalBox .secondArea {
+  width: 55rem;
+  height: 85vh;
+  border: 0rem solid white;
+  border-right: 0.2rem;
+  display: inline-block;
+  float: left;
+  z-index: 100;
+}
+.totalBox .secondArea .secondUpperArea {
+  width: 55rem;
+  height: 13vh;
+  border-bottom: 0rem solid white;
+  display: inline-flex;
+}
+.totalBox .secondArea .secondUpperArea .matrixBTitle {
+  width: 35rem;
+  height: 13vh;
+  border: 0rem solid black;
+  display: inline-block;
+  margin: 0 auto;
+}
+.totalBox .secondArea .secondUpperArea .matrixBTitle .matrixB_inner_title {
+  width: 35rem;
+  height: 5vh;
+  border: 0rem solid blue;
+  float: left;
+  font-size: 3rem;
+  font-family: "Jua", sans-serif;
+  text-align: center;
+  line-height: 4vh;
+}
+.totalBox .secondArea .secondUpperArea .matrixBTitle .matrixBInnerDown {
+  width: 35rem;
+  height: 7vh;
+  border: 0rem solid green;
+  display: inline-flex;
+  justify-content: center;
+  float: left;
+  margin-left: 0.5rem;
+  z-index: 100;
+}
+.totalBox .secondArea .secondUpperArea .matrixBTitle .matrixBInnerDown .matrixB_colume, .totalBox .secondArea .secondUpperArea .matrixBTitle .matrixBInnerDown .matrix_font, .totalBox .secondArea .secondUpperArea .matrixBTitle .matrixBInnerDown .multify, .totalBox .secondArea .secondUpperArea .matrixBTitle .matrixBInnerDown .matrixB_row {
+  width: 6rem;
+  height: 6vh;
+  border: 0rem solid yellow;
+  display: inline-flex;
+  float: left;
+  justify-content: center;
+}
+.totalBox .secondArea .secondUpperArea .matrixBTitle .matrixBInnerDown .matrixB_colume, .totalBox .secondArea .secondUpperArea .matrixBTitle .matrixBInnerDown .matrixB_row {
+  width: 5.5rem;
+  border: 0.2rem solid white;
+  background-color: rgba(250, 250, 250, 0);
+  box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+  font-size: 3rem;
+  text-align: center;
+  z-index: 100;
+  border-radius: 20%;
+  margin-top: 0vh;
+}
+.totalBox .secondArea .secondUpperArea .matrixBTitle .matrixBInnerDown .numbering_button {
+  width: 2rem;
+  height: 5vh;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  z-index: 100;
+}
+.totalBox .secondArea .secondUpperArea .matrixBTitle .matrixBInnerDown .numbering_button .upperNum_button {
+  height: 2.5vh;
+  font-size: 1.7rem;
+  font-weight: bold;
+  box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+  text-align: center;
+  border-radius: 20%;
+  margin-top: 0.2rem;
+}
+.totalBox .secondArea .secondUpperArea .matrixBTitle .matrixBInnerDown .numbering_button .lowerNum_button {
+  height: 2.7vh;
+  font-size: 1.7rem;
+  font-weight: bold;
+  box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+  text-align: center;
+  border-radius: 20%;
+  margin-top: 0.5rem;
+}
+.totalBox .secondArea .secondUpperArea .matrixBTitle .matrixBInnerDown .matrix_font {
+  text-align: center;
+  line-height: 8vh;
+  width: 5rem;
+  font-size: 3rem;
+  font-family: "Jua", sans-serif;
+}
+.totalBox .secondArea .secondUpperArea .matrixBTitle .matrixBInnerDown .multify {
+  text-align: center;
+  margin-top: 0vh;
+  margin-left: -0.5rem;
+  width: 5rem;
+  font-size: 4rem;
+  font-family: "Jua", sans-serif;
+}
+.totalBox .secondArea .secondLowerArea {
+  width: 55rem;
+  height: 72vh;
+  border: 0rem solid yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.totalBox .secondArea .secondLowerArea .button_area {
+  width: 34rem;
+  height: 6vh;
+  border: 0rem solid blue;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  z-index: 100;
+}
+.totalBox .secondArea .secondLowerArea .button_area .matrixB_outputButton {
+  width: 8rem;
+  height: 6vh;
+  border: 0.2rem solid white;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0);
+  display: inline-flex;
+  justify-content: center;
+  line-height: 6vh;
+  z-index: 100;
+  border-radius: 10%;
+  box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+  font-size: 2rem;
+  font-family: "Jua", sans-serif;
+}
+.totalBox .secondArea .secondLowerArea .button_area .matrixB_outputButton:hover {
+  background-color: #b19ff1;
+  border: 0rem solid #5a33e6;
+  cursor: pointer;
+}
+.totalBox .secondArea .secondLowerArea .button_area .matrixB_random {
+  width: 8rem;
+  height: 6vh;
+  border: 0.2rem solid white;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0);
+  display: inline-flex;
+  justify-content: center;
+  line-height: 6vh;
+  z-index: 100;
+  border-radius: 10%;
+  box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+  font-size: 2rem;
+  font-family: "Jua", sans-serif;
+}
+.totalBox .secondArea .secondLowerArea .button_area .matrixB_random:hover {
+  background-color: #b19ff1;
+  border: 0rem solid #5a33e6;
+  cursor: pointer;
+}
+.totalBox .secondArea .secondLowerArea .button_area .matrixB_reset {
+  width: 8rem;
+  height: 6vh;
+  border: 0.2rem solid white;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0);
+  display: inline-flex;
+  justify-content: center;
+  line-height: 6vh;
+  z-index: 100;
+  border-radius: 10%;
+  box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+  font-size: 2rem;
+  font-family: "Jua", sans-serif;
+}
+.totalBox .secondArea .secondLowerArea .button_area .matrixB_reset:hover {
+  background-color: #b19ff1;
+  border: 0rem solid #5a33e6;
+  cursor: pointer;
+}
+.totalBox .secondArea .secondLowerArea .matrixB_output {
+  width: 54rem;
+  height: 64vh;
+  border: 0rem solid white;
+  border-right: 0.2rem dotted white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  margin-top: 0vh;
+  margin-left: 0.2rem;
+  z-index: 100;
+}
+.totalBox .secondArea .secondLowerArea .matrixB_output #innerBox_bRow {
+  border: 0rem solid blue;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+}
+.totalBox .secondArea .secondLowerArea .matrixB_output #innerBox_bRow #innerBox_bColume {
+  border: 0rem solid #563abb;
+  box-shadow: 0 0 0.8rem 0 lightgray;
+  width: 4.5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  z-index: 100;
+  text-align: center;
+  border-radius: 20%;
+  background-color: rgba(230, 219, 219, 0);
+  color: #303a68;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.fourthArea {
+  width: 120rem;
+  height: 100vh;
+  border: 0rem solid black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  color: #f2a7a7;
+  z-index: 200;
+}
+.fourthArea .fourthUpperArea {
+  width: 120rem;
+  height: 20vh;
+  border-bottom: 0rem solid white;
+  display: flex;
+  /* background-color: 0; */
+}
+.fourthArea .fourthUpperArea .matrixRTitle {
+  width: 120rem;
+  height: 20vh;
+  border: 0rem solid black;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 0vh;
+  justify-content: center;
+  z-index: 100;
+}
+.fourthArea .fourthUpperArea .matrixRTitle .matrixR_inner_DownAll {
+  width: 35rem;
+  height: 8vh;
+  border: 0rem solid blue;
+  float: left;
+  margin-top: 2rem;
+  z-index: 100;
+  font-size: 5rem;
+  font-family: "Jua", sans-serif;
+  text-align: center;
+  line-height: 7vh;
+}
+.fourthArea .fourthUpperArea .matrixRTitle .matrixRInnerDown {
+  width: 35rem;
+  height: 7vh;
+  border: 0rem solid green;
+  display: flex;
+  justify-content: center;
+  line-height: 7vh;
+  float: left;
+  z-index: 100;
+}
+.fourthArea .fourthUpperArea .matrixRTitle .matrixRInnerDown .matrixR_colume, .fourthArea .fourthUpperArea .matrixRTitle .matrixRInnerDown .matrix_font, .fourthArea .fourthUpperArea .matrixRTitle .matrixRInnerDown .multify, .fourthArea .fourthUpperArea .matrixRTitle .matrixRInnerDown .matrixR_row {
+  width: 6rem;
+  height: 7vh;
+  border: 0rem solid yellow;
+  display: inline-flex;
+  float: left;
+  line-height: 7vh;
+  justify-content: center;
+  z-index: 100;
+}
+.fourthArea .fourthUpperArea .matrixRTitle .matrixRInnerDown .matrixR_colume, .fourthArea .fourthUpperArea .matrixRTitle .matrixRInnerDown .matrixR_row {
+  border: 0.2rem solid white;
+  background-color: rgba(250, 250, 250, 0);
+  box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+  font-size: 4rem;
+  text-align: center;
+  z-index: 100;
+  border-radius: 20%;
+}
+.fourthArea .fourthUpperArea .matrixRTitle .matrixRInnerDown .matrix_font {
+  text-align: center;
+  line-height: 10vh;
+  width: 5rem;
+  font-size: 4rem;
+  font-family: "Jua", sans-serif;
+}
+.fourthArea .fourthUpperArea .matrixRTitle .matrixRInnerDown .multify {
+  text-align: center;
+  line-height: 8vh;
+  width: 5rem;
+  font-size: 6rem;
+  font-family: "Jua", sans-serif;
+}
+.fourthArea .fourthLowerArea {
+  width: 120rem;
+  height: 80vh;
+  border: 0rem solid yellow;
+  display: flex;
+  float: left;
+  z-index: 100;
+}
+.fourthArea .fourthLowerArea .matrixR_output {
+  width: 104rem;
+  height: 77vh;
+  border: 0rem solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  z-index: 100;
+  margin-left: 8rem;
+}
+.fourthArea .fourthLowerArea .matrixR_output #innerBox_rRow {
+  border: 0rem solid red;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+}
+.fourthArea .fourthLowerArea .matrixR_output #innerBox_rRow #innerBox_rColume {
+  border: 0rem solid #563abb;
+  box-shadow: 0 0 0.8rem 0 lightgray;
+  width: 10rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  z-index: 100;
+  text-align: center;
+  border-radius: 20%;
+  background-color: rgba(230, 219, 219, 0);
+  color: #333;
+  font-size: 2rem;
+  font-weight: bold;
+  /*&:hover {
+    width: 7rem;
+    height: 7rem;
+    cursor: zoom-in;
+    font: {
+      size: 1.5rem;
+      weight: bold;
+    }
+  }*/
+}
+.fourthArea .fourthLowerArea .back_button {
+  width: 8rem;
+  height: 8rem;
+  color: #f2a7a7;
+  border-radius: 50%;
+  margin-top: 67vh;
+  background-color: white;
+  box-shadow: 0rem 0rem 0.8rem 0rem lightgray;
+  border: 2px solid white;
+  text-align: center;
+  line-height: 9vh;
+  z-index: 100;
+  font-size: 5rem;
+  font-weight: bold;
+}
+.fourthArea .fourthLowerArea .back_button:hover {
+  border: 0px solid #5a33e6;
+  background-color: #b19ff1;
+  cursor: pointer;
+}

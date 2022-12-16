@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="./img/matrixFavicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/matrixCSS.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&amp;family=Stylish&amp;display=swap" rel="stylesheet">
+    <script src="three.r119.min.js"></script>
+    <script src="vanta.birds.min.js"></script>
+    <title>matrixCalculator</title>
+  </head>
+  <body>
+    <div class="alertBox" id="alertBox">매트릭스의 행과 열을 <br>확인하세요!!</div>
+    <section class="wraptotalBox"></section>
+    <section class="totalBox" id="totalBox">
+      <section class="upperArea">
+        <articl class="matrixTitle">Matrix Calculator</articl>
+      </section>
+      <main class="firstArea">
+        <section class="firstUpperArea"> 
+          <article class="matrixATitle"> 
+            <div class="matrixA_inner_title">MatrixA </div>
+            <div class="matrixAInnerDown">
+              <input class="matrixA_row" type="number" value="1" min="1" max="9" id="matrixA_row" oninput="handle_input(this, 1)">
+              <div class="numbering_button"><i class="xi-caret-up upperNum_button" id="upperNum_Abutton"></i><i class="xi-caret-down lowerNum_button" id="lowerNum_Abutton"></i></div>
+              <div class="matrix_font">행</div>
+              <div class="multify">X</div>
+              <input class="matrixA_colume" type="number" value="1" min="1" max="9" oninput="handle_input(this, 1)" id="matrixA_colume">
+              <div class="numbering_button"><i class="xi-caret-up upperNum_button" id="upperNum_Abutton_colume"></i><i class="xi-caret-down lowerNum_button" id="lowerNum_Abutton_colume"></i></div>
+              <div class="matrix_font">열</div>
+            </div>
+          </article>
+        </section>
+        <section class="firstLowerArea"> 
+          <article class="button_area">
+            <button class="matrixA_outputButton" id="matrixA_outputButton">output</button>
+            <button class="matrixA_random" id="matrixA_random">random</button>
+            <button class="matrixA_reset" id="matrixA_reset">reset       </button>
+          </article>
+          <article class="matrixA_output" id="matrixA_output"></article>
+        </section>
+      </main>
+      <main class="calculateArea">
+        <section class="calArea">
+          <!--a(href="#matrixRTitle" class="moveToResult" id="moveToResult")--><i class="xi-plus plusButton" id="plusButton"> </i><i class="xi-minus minusButton" id="minusButton"></i><i class="xi-close multiButton" id="multiButton"></i>
+        </section>
+      </main>
+      <main class="secondArea">
+        <section class="secondUpperArea"> 
+          <article class="matrixBTitle"> 
+            <div class="matrixB_inner_title">MatrixB </div>
+            <div class="matrixBInnerDown">
+              <input class="matrixB_row" type="number" value="1" min="1" max="9" oninput="handle_input(this, 1)" id="matrixB_row">
+              <div class="numbering_button"><i class="xi-caret-up upperNum_button" id="upperNum_Bbutton"></i><i class="xi-caret-down lowerNum_button" id="lowerNum_Bbutton"></i></div>
+              <div class="matrix_font">행</div>
+              <div class="multify">X</div>
+              <input class="matrixB_colume" type="number" value="1" min="1" max="9" oninput="handle_input(this, 1)" id="matrixB_colume">
+              <div class="numbering_button"><i class="xi-caret-up upperNum_button" id="upperNum_Bbutton_colume"></i><i class="xi-caret-down lowerNum_button" id="lowerNum_Bbutton_colume"></i></div>
+              <div class="matrix_font">열</div>
+            </div>
+          </article>
+        </section>
+        <section class="secondLowerArea"> 
+          <article class="button_area">
+            <button class="matrixB_outputButton" id="matrixB_outputButton">output</button>
+            <button class="matrixB_random" id="matrixB_random">random</button>
+            <button class="matrixB_reset" id="matrixB_reset">reset        </button>
+          </article>
+          <article class="matrixB_output" id="matrixB_output"></article>
+        </section>
+      </main>
+    </section>
+    <main class="fourthArea">
+      <section class="fourthUpperArea"> 
+        <article class="matrixRTitle" id="matrixRTitle"> 
+          <div class="matrixR_inner_DownAll">RESULT
+            <div class="matrixRInnerDown">
+              <input class="matrixR_row" type="number" min="1" max="9" oninput="handle_input(this, 1)" id="matrixR_row" readonly>
+              <div class="matrix_font">행</div>
+              <div class="multify">X</div>
+              <input class="matrixR_colume" type="number" min="1" max="9" oninput="handle_input(this, 1)" id="matrixR_colume" readonly>
+              <div class="matrix_font">열</div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="fourthLowerArea"> 
+        <article class="matrixR_output" id="matrixR_output"></article><a href="#totalBox"><i class="xi-arrow-up back_button"></i></a>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
