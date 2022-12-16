@@ -1,0 +1,45 @@
+<!DOCTYPE html >
+<html lang="ko">
+  <head> 
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../css/towerofhanoi.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon.ico/favicon-16x16.png"/>
+    <title>Tower of Hanoi </title>
+  </head>
+  <body>
+    <main class="total_area">
+      <main class="background_check"></main>
+      <main class="top_area">Tower of Hanoi
+        <section class="title_area"></section>
+      </main>
+      <main class="hanoi_tower" id="hanoi_tower">
+        <section class="first_bar" id="first_bar">
+          <section class="stick_bar"></section>
+        </section>
+        <section class="second_bar" id="second_bar">
+          <section class="stick_bar">       </section>
+        </section>
+        <section class="third_bar" id="third_bar">
+          <section class="stick_bar"></section>
+        </section>
+      </main>
+      <main class="check_area">
+        <section class="input_area">
+          <div class="input_total">
+            <div class="intro_sentence">Disk&nbsp;&nbsp;: </div>
+            <input class="input_number" type="number" id="input_number" autocomplete="off"/>
+          </div>
+          <div class="button_area">
+            <div class="confirm_button" id="confirm_button">확인</div>
+            <div class="reset_button" id="reset_button">Reset</div>
+          </div>
+        </section>
+        <section class="check_numbering">
+          <div class="inner_box" id="inner_box"></div>
+        </section>
+      </main>
+    </main>
+    <script src="./towerofhanoiscript.js"></script>
+  </body>
+</html>

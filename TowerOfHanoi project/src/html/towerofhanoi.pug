@@ -1,0 +1,31 @@
+doctype html 
+html(lang="ko")
+  head 
+    meta(charset="utf-8")
+    link(rel="stylesheet" href="../css/towerofhanoi.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    link(rel="icon" type="image/png" sizes="16x16" href="../img/favicon.ico/favicon-16x16.png")
+    title Tower of Hanoi 
+  body
+    main(class="total_area")
+      main(class="background_check")
+      main(class="top_area") Tower of Hanoi
+        section(class="title_area")
+      main(class="hanoi_tower" id="hanoi_tower")
+        section(class="first_bar" id="first_bar")
+          section(class="stick_bar")
+        section(class="second_bar" id="second_bar")
+          section(class="stick_bar")        
+        section(class="third_bar" id="third_bar")
+          section(class="stick_bar")
+      main(class="check_area")
+        section(class="input_area")
+          div(class="input_total")
+            div(class="intro_sentence") Disk&nbsp;&nbsp;: 
+            input(type="number" class="input_number" id="input_number" autocomplete="off")
+          div(class="button_area")
+            div(class="confirm_button" id="confirm_button") 확인
+            div(class="reset_button" id="reset_button") Reset
+        section(class="check_numbering")
+          div(class="inner_box" id="inner_box")
+    script(src="./towerofhanoiscript.js")

@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+@font-face {
+  font-family: "Suisse Intl";
+  src: url("../../build/css/boldOnlineWebFonts_COM_9fdf41571ed2d7a42325b9210f262843/SuisseIntl-Bold/@font-face/d1a580023d40c546276decde1c711e60.eot");
+  src: url("../../build/css/boldOnlineWebFonts_COM_9fdf41571ed2d7a42325b9210f262843/SuisseIntl-Bold/@font-face/d1a580023d40c546276decde1c711e60.eot") format("embedded-opentype"), url("../../build/css/boldOnlineWebFonts_COM_9fdf41571ed2d7a42325b9210f262843/SuisseIntl-Bold/@font-face/d1a580023d40c546276decde1c711e60.woff2") format("woff2"), url("../../build/css/boldOnlineWebFonts_COM_9fdf41571ed2d7a42325b9210f262843/SuisseIntl-Bold/@font-face/d1a580023d40c546276decde1c711e60.woff") format("woff"), url("../../build/css/boldOnlineWebFonts_COM_9fdf41571ed2d7a42325b9210f262843/SuisseIntl-Bold/@font-face/d1a580023d40c546276decde1c711e60.ttf") format("truetype"), url("../../build/css/boldOnlineWebFonts_COM_9fdf41571ed2d7a42325b9210f262843/SuisseIntl-Bold/@font-face/d1a580023d40c546276decde1c711e60.svg") format("svg");
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.total_area {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.total_area .background_check {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../build/img/sky.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  filter: blur(1px);
+  position: fixed;
+  z-index: -1;
+}
+.total_area .top_area {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 5vw;
+  font-family: "Suisse Intl", sans-serif;
+}
+.total_area .hanoi_tower {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.total_area .hanoi_tower > section {
+  width: 25vw;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0.2vw 0.2vw 0.2vw 0.1vw #fefefe;
+}
+.total_area .hanoi_tower > section .stick_bar {
+  width: 0.5vw;
+  height: 55vh;
+  display: fixed;
+  background-color: rgba(134, 102, 250, 0.6);
+  box-shadow: 0.2vw 0.1vw gray;
+}
+.total_area .hanoi_tower > section .contain1 {
+  width: 4vw;
+  height: 7vh;
+  background-color: tomato;
+}
+.total_area .hanoi_tower > section .contain2 {
+  width: 8vw;
+  height: 7vh;
+  background-color: lightcyan;
+}
+.total_area .hanoi_tower > section .contain3 {
+  width: 12vw;
+  height: 7vh;
+  background-color: antiquewhite;
+}
+.total_area .hanoi_tower > section .contain4 {
+  width: 16.5vw;
+  height: 7vh;
+  background-color: #eee193;
+}
+.total_area .hanoi_tower > section .contain5 {
+  width: 20.5vw;
+  height: 7vh;
+  background-color: aquamarine;
+}
+.total_area .hanoi_tower > section .contain6 {
+  width: 25vw;
+  height: 7vh;
+  background-color: beige;
+}
+.total_area .check_area {
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.total_area .check_area .input_area {
+  width: 35vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.total_area .check_area .input_area .input_total {
+  width: 20vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+.total_area .check_area .input_area .input_total .intro_sentence {
+  width: 10vw;
+  height: 10vh;
+  text-align: center;
+  line-height: 10vh;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 2.5vw;
+  font-family: "Suisse Intl", sans-serif;
+}
+.total_area .check_area .input_area .input_total .input_number {
+  width: 8vw;
+  height: 10vh;
+  box-shadow: 0.1vw 0.1vw 0.1vw 0.1vw black;
+  text-align: center;
+  border-radius: 1vw;
+  font-size: 3vw;
+  font-family: "Suisse Intl", sans-serif;
+}
+.total_area .check_area .input_area .button_area {
+  width: 8vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.total_area .check_area .input_area .button_area .confirm_button {
+  width: 7vw;
+  height: 8vh;
+  background-color: rgba(238, 225, 147, 0.7);
+  box-shadow: 0.1vw 0.1vw 0.1vw 0.1vw black;
+  text-align: center;
+  line-height: 8vh;
+  border-radius: 1vw;
+  margin-bottom: 1vw;
+  font-size: 2vw;
+  font-weight: bold;
+}
+.total_area .check_area .input_area .button_area .confirm_button:hover {
+  cursor: pointer;
+}
+.total_area .check_area .input_area .button_area .reset_button {
+  width: 7vw;
+  height: 8vh;
+  background-color: rgba(238, 225, 147, 0.7);
+  box-shadow: 0.1vw 0.1vw 0.1vw 0.1vw black;
+  text-align: center;
+  line-height: 8vh;
+  border-radius: 1vw;
+  font-size: 2vw;
+  font-weight: bold;
+}
+.total_area .check_area .input_area .button_area .reset_button:hover {
+  cursor: pointer;
+}
+.total_area .check_area .check_numbering {
+  width: 65vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.total_area .check_area .check_numbering .inner_box {
+  width: 50vw;
+  height: 25vh;
+  box-shadow: 0.2vw 0.2vw 0.2vw 0.2vw #292727;
+  background-color: rgba(255, 255, 255, 0.7);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.total_area .check_area .check_numbering .inner_box > p {
+  width: 50vw;
+  height: 5vh;
+  text-align: center;
+  align-items: 5vh;
+  font-size: 2vw;
+}
